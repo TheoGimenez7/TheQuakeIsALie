@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Materialtest : MonoBehaviour {
+public class Couleur_Taille_Son : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
