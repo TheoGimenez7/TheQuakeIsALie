@@ -14,12 +14,15 @@ public class ChacunSonJoueur : NetworkBehaviour {
         Debug.Log(specsJoueursADesactiver[0]);
         if (!isLocalPlayer)
         {
-            //Désactive les components des AUTRES Joueurs
-            for (int i = 0; i < specsJoueursADesactiver.Length; i++)
-                specsJoueursADesactiver[i].enabled = false;
-
             Behaviour eject = GetComponent<ShotEject>();
             eject.enabled = false;
+
+            //Désactive les components des AUTRES Joueurs
+            for (int i = 0; i < specsJoueursADesactiver.Length; i++)
+            {
+                specsJoueursADesactiver[i].enabled = false;
+            }
+
 
         }
         else
