@@ -14,8 +14,8 @@ public class ChacunSonJoueur : NetworkBehaviour {
         Debug.Log(specsJoueursADesactiver[0]);
         if (!isLocalPlayer)
         {
-            Behaviour eject = GetComponent<ShotEject>();
-            eject.enabled = false;
+            GameObject eject = transform.Find("FirstPersonCharacter/gun1.2/Eject").gameObject;
+            eject.SetActive(false);
 
             //Désactive les components des AUTRES Joueurs
             for (int i = 0; i < specsJoueursADesactiver.Length; i++)
