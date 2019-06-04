@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Networking;
 [RequireComponent(typeof(AudioSource))]
-public class ShotEject : MonoBehaviour
+public class ShotEject : NetworkBehaviour
 {
 
     public Rigidbody bulletcasing;
@@ -28,8 +28,6 @@ public class ShotEject : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-
-
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
