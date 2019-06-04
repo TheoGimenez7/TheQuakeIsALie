@@ -10,4 +10,9 @@ public class MainMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("TheQuakeIsALie", LoadSceneMode.Single);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
