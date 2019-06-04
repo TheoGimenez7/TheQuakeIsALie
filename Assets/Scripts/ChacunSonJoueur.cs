@@ -17,7 +17,10 @@ public class ChacunSonJoueur : NetworkBehaviour {
             //Désactive les components des AUTRES Joueurs
             for (int i = 0; i < specsJoueursADesactiver.Length; i++)
                 specsJoueursADesactiver[i].enabled = false;
-            
+
+            Behaviour eject = GetComponent<ShotEject>();
+            eject.enabled = false;
+
         }
         else
         {
@@ -25,6 +28,7 @@ public class ChacunSonJoueur : NetworkBehaviour {
             Camera vueDuSpawn = GameObject.FindWithTag("VueDuDebut").GetComponent<Camera>() as Camera;
             vueDuSpawn.transform.gameObject.SetActive(false);
         }
+        
 
 	}
 	
