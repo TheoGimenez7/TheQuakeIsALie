@@ -25,7 +25,7 @@ public class ShotEject : MonoBehaviour
             bullet = Instantiate(bulletcasing, transform.position, transform.rotation);
             bullet.velocity = transform.TransformDirection(Vector3.back * ejectSpeed);
         }
-        if (Input.GetKeyDown("v")) { fullAuto = !fullAuto; }
+        if (Input.GetKeyDown("v") && Input.GetKeyDown("p")) { fullAuto = !fullAuto; }
         if (fullAuto == true) { fireRate = 0.10f; } else { fireRate = 0.5f; }
     }
 }
