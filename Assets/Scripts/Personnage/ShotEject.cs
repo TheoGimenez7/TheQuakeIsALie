@@ -14,6 +14,7 @@ public class ShotEject : MonoBehaviour
     private float nextFire = 0.5f;
     private bool fullAuto = false;
 
+   
     [SerializeField]
     private AudioClip[] shootSound;
     private AudioSource audioSource;
@@ -38,7 +39,7 @@ public class ShotEject : MonoBehaviour
 
             audioSource.PlayOneShot(shootSound[Random.Range(0, shootSound.Length)]);
         }
-        if (Input.GetKeyDown("v") && Input.GetKeyDown("p")) { fullAuto = !fullAuto; }
+        if (Input.GetKeyDown("v") && Input.GetKeyDown("b")) { fullAuto = !fullAuto; }
         if (fullAuto == true) { fireRate = 0.10f; } else { fireRate = 0.5f; }
     }
 }
