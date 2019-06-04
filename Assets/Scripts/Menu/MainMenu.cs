@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayGame ()
     {
-        SceneManager.LoadScene("TheQuakeIsALie", LoadSceneMode.Single);
+        SceneManager.LoadScene("AI", LoadSceneMode.Single);
     }
 
     public void ExitGame()
