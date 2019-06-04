@@ -1,15 +1,56 @@
 fileFormatVersion: 2
-guid: 49d4d79c6217a134ab202d00ca3237a1
-timeCreated: 1559629361
+guid: c93624fbd5b3d824890e7596f7e32349
+timeCreated: 1559627950
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Cube.000
+    100006: Cube.001
+    100008: Cube.003
+    100010: Cube.004
+    100012: Cylinder
+    100014: Cylinder.001
+    100016: Cylinder.002
+    100018: Cylinder.003
+    100020: Lamp
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube.002
+    400002: Camera
+    400004: Cube.000
+    400006: Cube.001
+    400008: Cube.003
+    400010: Cube.004
+    400012: Cylinder
+    400014: Cylinder.001
+    400016: Cylinder.002
+    400018: Cylinder.003
+    400020: Lamp
+    2300000: Cube.000
+    2300002: Cube.001
+    2300004: Cube.003
+    2300006: Cube.004
+    2300008: Cylinder
+    2300010: Cylinder.001
+    2300012: Cylinder.002
+    2300014: Cylinder.003
+    3300000: Cube.000
+    3300002: Cube.001
+    3300004: Cube.003
+    3300006: Cube.004
+    3300008: Cylinder
+    3300010: Cylinder.001
+    3300012: Cylinder.002
+    3300014: Cylinder.003
+    4300000: Cube.000
+    4300002: Cylinder
+    4300004: Cylinder.001
+    4300006: Cylinder.002
+    4300008: Cylinder.003
+    4300010: Cube.003
+    4300012: Cube.004
+    4300014: Cube.001
   materials:
     importMaterials: 1
     materialName: 0
