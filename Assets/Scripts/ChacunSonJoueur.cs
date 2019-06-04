@@ -9,13 +9,15 @@ public class ChacunSonJoueur : NetworkBehaviour {
     // Behaviour c'est la liste des components des objects 
     [SerializeField]
     Behaviour[] specsJoueursADesactiver;
-	void Start () {
-        
+    
+    void Start () {
+        Debug.Log(specsJoueursADesactiver[0]);
         if (!isLocalPlayer)
         {
             //Désactive les components des AUTRES Joueurs
             for (int i = 0; i < specsJoueursADesactiver.Length; i++)
                 specsJoueursADesactiver[i].enabled = false;
+            
         }
         else
         {
