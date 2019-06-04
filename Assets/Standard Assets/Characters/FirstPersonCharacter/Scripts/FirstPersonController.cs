@@ -11,8 +11,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
-        [SerializeField] private float m_WalkSpeed;
-        [SerializeField] private float m_RunSpeed;
+        [SerializeField] public float m_WalkSpeed;
+        [SerializeField] public float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -32,7 +32,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jump;
         private float m_YRotation;
         private Vector2 m_Input;
-        private Vector3 m_MoveDir = Vector3.zero;
+        public Vector3 m_MoveDir = Vector3.zero;
         private CharacterController m_CharacterController;
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
@@ -82,7 +82,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
-
+    
 
         private void PlayLandingSound()
         {
@@ -108,6 +108,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
+            if (Input.GetButton("Fire2"))
+            {
+                m_MoveDir.x = m_MoveDir.x / 2;
+                m_MoveDir.z = m_MoveDir.z / 2;
+            }
+
 
             if (m_CharacterController.isGrounded)
             {
@@ -129,7 +135,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
-
+            
             m_MouseLook.UpdateCursorLock();
         }
 
@@ -197,7 +203,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 newCameraPosition = m_Camera.transform.localPosition;
                 newCameraPosition.y = m_OriginalCameraPosition.y - m_JumpBob.Offset();
             }
-            m_Camera.transform.localPosition = newCameraPosition;
+            m_Camera.transform.localPosition = newCameraPosition;           
         }
 
 
