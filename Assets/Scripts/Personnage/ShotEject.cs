@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ShotEject : MonoBehaviour
 {
 
@@ -13,8 +14,18 @@ public class ShotEject : MonoBehaviour
     private float nextFire = 0.5f;
     private bool fullAuto = false;
 
+    [SerializeField]
+    private AudioClip[] shootSound;
+    private AudioSource audioSource;
+
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
 
 
@@ -24,6 +35,8 @@ public class ShotEject : MonoBehaviour
 
             bullet = Instantiate(bulletcasing, transform.position, transform.rotation);
             bullet.velocity = transform.TransformDirection(Vector3.back * ejectSpeed);
+
+            audioSource.PlayOneShot(shootSound[Random.Range(0, shootSound.Length)]);
         }
         if (Input.GetKeyDown("v") && Input.GetKeyDown("p")) { fullAuto = !fullAuto; }
         if (fullAuto == true) { fireRate = 0.10f; } else { fireRate = 0.5f; }
