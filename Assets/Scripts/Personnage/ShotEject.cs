@@ -35,9 +35,13 @@ public class ShotEject : NetworkBehaviour
             bullet = Instantiate(bulletcasing, transform.position, transform.rotation);
             bullet.velocity = transform.TransformDirection(Vector3.back * ejectSpeed);
 
+            NetworkServer.Spawn(bullet.gameObject);
+            bullet.gameObject.GetComponent<Rigidbody>();
+
             audioSource.PlayOneShot(shootSound[Random.Range(0, shootSound.Length)]);
         }
         if (Input.GetKeyDown("v") && Input.GetKeyDown("b")) { fullAuto = !fullAuto; }
         if (fullAuto == true) { fireRate = 0.10f; } else { fireRate = 0.5f; }
     }
+
 }
