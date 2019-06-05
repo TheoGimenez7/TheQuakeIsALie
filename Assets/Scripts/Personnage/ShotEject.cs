@@ -34,8 +34,9 @@ public class ShotEject : NetworkBehaviour
 
             bullet = Instantiate(bulletcasing, transform.position, transform.rotation);
             bullet.velocity = transform.TransformDirection(Vector3.back * ejectSpeed);
-            
-            //NetworkServer.Spawn(bullet);
+
+            NetworkServer.Spawn(bullet.gameObject);
+            bullet.gameObject.GetComponent<Rigidbody>();
 
             audioSource.PlayOneShot(shootSound[Random.Range(0, shootSound.Length)]);
         }
