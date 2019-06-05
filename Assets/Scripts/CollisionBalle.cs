@@ -27,15 +27,14 @@ public class CollisionBalle : NetworkBehaviour
         if (collision.gameObject.tag == "Projectile")
         {
             audioSource.PlayOneShot(deathSound[Random.Range(0, deathSound.Length)]);
-            StartCoroutine(Respawn());
+            Respawn();
         }
     }
 
-    private IEnumerator Respawn()
+    private void Respawn()
     {
         /*GameObject[] spawnPoints1 = GameObject.FindGameObjectsWithTag("PointSpawn");
         int tirageSpawn = Random.Range(0, spawnPoints1.Length);*/
-        yield return new WaitForSeconds(0f);
         Transform _spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = _spawnPoint.position;
         transform.rotation = _spawnPoint.rotation;
