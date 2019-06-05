@@ -12,6 +12,7 @@ public class SupprimerProjectile : MonoBehaviour
     public void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        Destroy(gameObject, 2);
     }
 
 

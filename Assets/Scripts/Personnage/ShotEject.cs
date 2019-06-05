@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+
 [RequireComponent(typeof(AudioSource))]
 public class ShotEject : NetworkBehaviour
 {
+    
+    public GameObject bulletcasing;
+    private Transform bulletSpawn;
 
-    public Rigidbody bulletcasing;
-    private Rigidbody bullet;
-
-    public int ejectSpeed = 10;
+    public int ejectSpeed = 100;
     public float fireRate = 0.5f;
     private float nextFire = 0.5f;
     private bool fullAuto = false;
@@ -21,7 +22,7 @@ public class ShotEject : NetworkBehaviour
 
     public void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -32,16 +33,24 @@ public class ShotEject : NetworkBehaviour
         {
             nextFire = Time.time + fireRate;
 
-            bullet = Instantiate(bulletcasing, transform.position, transform.rotation);
-            bullet.velocity = transform.TransformDirection(Vector3.back * ejectSpeed);
+            CmdFire();
 
-            NetworkServer.Spawn(bullet.gameObject);
-            bullet.gameObject.GetComponent<Rigidbody>();
-
-            audioSource.PlayOneShot(shootSound[Random.Range(0, shootSound.Length)]);
+            //audioSource.PlayOneShot(shootSound[Random.Range(0, shootSound.Length)]);
         }
         if (Input.GetKeyDown("v") && Input.GetKeyDown("b")) { fullAuto = !fullAuto; }
         if (fullAuto == true) { fireRate = 0.10f; } else { fireRate = 0.5f; }
+    }
+
+    //[RPC]
+
+
+    [Command]
+    void CmdFire()
+    {
+        bulletSpawn = transform.Find("FirstPersonCharacter/gun1.2/Eject");
+        GameObject bullet =(GameObject) Instantiate(bulletcasing, bulletSpawn.position, bulletSpawn.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward*ejectSpeed;
+        NetworkServer.Spawn(bullet);
     }
 
 }
