@@ -17,12 +17,12 @@ public class ShotEject : NetworkBehaviour
 
    
     [SerializeField]
-    private AudioClip[] shootSound;
-    private AudioSource audioSource;
+    //private AudioClip[] shootSound;
+    //private AudioSource audioSource;
 
     public void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -35,7 +35,7 @@ public class ShotEject : NetworkBehaviour
 
             CmdFire();
 
-            audioSource.PlayOneShot(shootSound[Random.Range(0, shootSound.Length)]);
+            //audioSource.PlayOneShot(shootSound[Random.Range(0, shootSound.Length)]);
         }
         if (Input.GetKeyDown("v") && Input.GetKeyDown("b")) { fullAuto = !fullAuto; }
         if (fullAuto == true) { fireRate = 0.10f; } else { fireRate = 0.5f; }

@@ -8,9 +8,9 @@ public class CollisionBalle : NetworkBehaviour
 {
 
 
-    [SerializeField]
-    private AudioClip[] deathSound;
-    private AudioSource audioSource;
+    //[SerializeField]
+    //private AudioClip[] deathSound;
+    //private AudioSource audioSource;
 
     [SerializeField]
     private Behaviour[] disableOnDeath;
@@ -18,7 +18,7 @@ public class CollisionBalle : NetworkBehaviour
 
     public void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -26,13 +26,16 @@ public class CollisionBalle : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Projectile")
         {
-            audioSource.PlayOneShot(deathSound[Random.Range(0, deathSound.Length)]);
+            Debug.Log("SANSLeSon");
+            //audioSource.PlayOneShot(deathSound[Random.Range(0, deathSound.Length)]);
+            Debug.Log("AvecLeSon");
             StartCoroutine(Respawn());
         }
     }
 
     private IEnumerator Respawn()
     {
+        Debug.Log("Lancement du respawn");
         /*GameObject[] spawnPoints1 = GameObject.FindGameObjectsWithTag("PointSpawn");
         int tirageSpawn = Random.Range(0, spawnPoints1.Length);*/
         yield return new WaitForSeconds(0f);
