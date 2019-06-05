@@ -11,7 +11,7 @@ public class ChacunSonJoueur : NetworkBehaviour {
     Behaviour[] specsJoueursADesactiver;
     
     void Start () {
-        Debug.Log(specsJoueursADesactiver[0]);
+        
         if (!isLocalPlayer)
         {
             GameObject eject = transform.Find("FirstPersonCharacter/gun1.2/Eject").gameObject;

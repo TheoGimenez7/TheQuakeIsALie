@@ -17,8 +17,8 @@ public class ShotEject : NetworkBehaviour
 
    
     [SerializeField]
-    private AudioClip[] shootSound;
-    private AudioSource audioSource;
+    //private AudioClip[] shootSound;
+    //private AudioSource audioSource;
 
     public void Start()
     {
