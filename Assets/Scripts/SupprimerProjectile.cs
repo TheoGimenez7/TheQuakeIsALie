@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class SupprimerProjectile : MonoBehaviour
 {
 
@@ -16,10 +17,9 @@ public class SupprimerProjectile : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+   private void OnCollisionEnter(Collision collision)
     {
         audioSource.PlayOneShot(impactSound[Random.Range(0, impactSound.Length)]);
         Destroy(gameObject);
     }
-
 }
