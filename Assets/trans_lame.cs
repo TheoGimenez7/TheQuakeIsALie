@@ -19,11 +19,18 @@ public class trans_lame : MonoBehaviour
     {
         if (avance)
         {
-            //if(Vector3.left >= 0)
-            transform.Translate(Vector3.left * Time.deltaTime * vitesse);
-            Debug.Log(Vector3.left);
-            Debug.Log(Vector3.left * Time.deltaTime * vitesse);
+            if (this.transform.position.x <= -19)
+                transform.Translate(Vector3.left * Time.deltaTime * vitesse);
+            else
+                avance = false;
+        }
 
+        if (!avance)
+        {
+            if (this.transform.position.x >= -42)
+                transform.Translate(Vector3.right * Time.deltaTime * vitesse);
+            else
+                avance = true;
         }
     }
 }
