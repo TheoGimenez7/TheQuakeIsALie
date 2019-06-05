@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class car : MonoBehaviour {
+public class deminuteur : MonoBehaviour {
 
     public GameObject display_time;
     public float time;

@@ -10,18 +10,30 @@ public class CollisionBalle : MonoBehaviour {
     private AudioClip[] deathSound;
     private AudioSource audioSource;
 
+    [SerializeField]
+    private Behaviour[] disableOnDeath;
+    private bool[] wasEnabled;
+
     public void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
   
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision, string _playerID)
     {
         if (collision.gameObject.tag == "Projectile")
         {
-            Debug.Log("PTDR ! T MOR :')))))) ");
             audioSource.PlayOneShot(deathSound[Random.Range(0, deathSound.Length)]);
+            Player _player = GameManager.GetPlayer(_playerID);
+            Respawn();
         }
+    }
+
+    private void Respawn()
+    {
+        GameObject[] spawnPoints1 = GameObject.FindGameObjectsWithTag("PointSpawn");
+        int tirageSpawn = Random.Range(0, spawnPoints1.Length);
+        
     }
 }
