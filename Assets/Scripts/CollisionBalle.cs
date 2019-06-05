@@ -32,6 +32,8 @@ public class CollisionBalle : MonoBehaviour {
 
     private void Respawn()
     {
-        GameObject[] spawnPoints1 = GetComponents(Spawnpoint);
+        GameObject[] spawnPoints1 = GameObject.FindGameObjectsWithTag("PointSpawn");
+        int tirageSpawn = Random.Range(0, spawnPoints1.Length);
+        
     }
 }
