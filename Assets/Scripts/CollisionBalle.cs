@@ -26,13 +26,17 @@ public class CollisionBalle : NetworkBehaviour
     {
         if (collision.gameObject.tag == "Projectile")
         {
+            Debug.Log("Touché sans audio");
             audioSource.PlayOneShot(deathSound[Random.Range(0, deathSound.Length)]);
-            Respawn();
+            Debug.Log("Touché avec audio");
+            CmdRespawn();
         }
     }
 
-    private void Respawn()
+      [Command]
+    private void CmdRespawn()
     {
+        Debug.Log("Coulé");
         /*GameObject[] spawnPoints1 = GameObject.FindGameObjectsWithTag("PointSpawn");
         int tirageSpawn = Random.Range(0, spawnPoints1.Length);*/
         Transform _spawnPoint = NetworkManager.singleton.GetStartPosition();
