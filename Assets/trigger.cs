@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class trigger : MonoBehaviour
 {
-    public GameObject text;
+    public GameObject text;    
     public GameObject porte;
     [SerializeField] int vitesse;
     // Use this for initialization
