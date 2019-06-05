@@ -33,7 +33,7 @@ public class CollisionBalle : NetworkBehaviour
         }
     }
 
-      //[Command]
+      [Command]
     private void CmdRespawn()
     {
         Debug.Log("Coulé");
