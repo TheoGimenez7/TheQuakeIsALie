@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuOptionInGame : MonoBehaviour {
+public class MenuPauseScript : MonoBehaviour {
 
     public static bool isOn = false;
 }
+
