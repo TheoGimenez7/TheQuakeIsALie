@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Linq; 
 
 [RequireComponent(typeof(Player))]
 public class GameManager : NetworkBehaviour
@@ -41,6 +42,14 @@ public class GameManager : NetworkBehaviour
     {
         return players[_playerID];
     }
+
+    public static Player[] GetAllPlayers()
+    {
+        Debug.Log("5");
+        return players.Values.ToArray();
+        
+    }
+
     private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(200, 200, 200, 500));

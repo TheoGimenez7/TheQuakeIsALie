@@ -13,4 +13,22 @@ public class Player : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private int kills;
+
+    public int Kills
+    {
+        get { return kills; }
+        set { kills = value; }
+    }
+
+    private int death;
+
+    public int Deaths
+    {
+        get { return death; }
+        set { death = value; }
+    }
+
+    public string username;
 }
