@@ -16,7 +16,7 @@ public class JoueurScoreBoardObjetScript : MonoBehaviour {
         usernameText.text = username;
         killstext.text ="Kills : " + kills;
         deathsText.text = "Deaths : " + deaths;
-        Debug.Log("7");
+        Debug.Log("OK MAJ tableau");
 
     }
 }

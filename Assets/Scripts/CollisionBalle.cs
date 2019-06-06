@@ -7,6 +7,9 @@ using UnityEngine.Networking;
 public class CollisionBalle : NetworkBehaviour
 {
 
+    [SerializeField]
+    public Player joueur;
+
 
     //[SerializeField]
     //private AudioClip[] deathSound;
@@ -24,18 +27,20 @@ public class CollisionBalle : NetworkBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Projectile")
+        if (collision.gameObject.tag == "Projectile" || collision.gameObject.tag == "Player")
         {
-            Debug.Log("SANSLeSon");
+            
             //audioSource.PlayOneShot(deathSound[Random.Range(0, deathSound.Length)]);
-            Debug.Log("AvecLeSon");
+            
             StartCoroutine(Respawn());
+
+            joueur.Deaths += 1;
         }
     }
 
     private IEnumerator Respawn()
     {
-        Debug.Log("Lancement du respawn");
+        
         /*GameObject[] spawnPoints1 = GameObject.FindGameObjectsWithTag("PointSpawn");
         int tirageSpawn = Random.Range(0, spawnPoints1.Length);*/
         yield return new WaitForSeconds(0f);
