@@ -21,5 +21,6 @@ public class SupprimerProjectile : MonoBehaviour
     {
         //audioSource.PlayOneShot(impactSound[Random.Range(0, impactSound.Length)]);
         Destroy(gameObject);
+        //Debug.Log("Touché");
     }
 }

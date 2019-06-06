@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class trigger : MonoBehaviour
 {
-    public GameObject text;    
+    public GameObject text;
     public GameObject porte;
     [SerializeField] int vitesse;
     // Use this for initialization
@@ -30,9 +30,9 @@ public class trigger : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if(collision.gameObject.tag == "player")
+        if (collision.gameObject.tag == "player")
         {
-            if(Input.GetButton("Interact"))
+            if (Input.GetButton("Interact"))
             {
                 porte.transform.Translate(Vector3.up * Time.deltaTime * vitesse);
             }
