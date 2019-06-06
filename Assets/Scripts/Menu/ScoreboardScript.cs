@@ -10,7 +10,6 @@ public class ScoreboardScript : MonoBehaviour {
     [SerializeField]
     private Transform playerScoreboardList;
 
-    // Use this for initialization
     
     void OnEnable()
     {

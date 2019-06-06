@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
+//[RequireComponent(typeof(AudioSource))]
 public class SupprimerProjectile : MonoBehaviour
 {
-
-    //[SerializeField]
-    //private AudioClip[] impactSound;
-    //private AudioSource audioSource;
+    /*
+    [SerializeField]
+    private AudioClip[] impactSound;
+    private AudioSource audioSource;*/
 
     private bool boul = true ;
 
@@ -24,6 +24,9 @@ public class SupprimerProjectile : MonoBehaviour
 
    private void OnCollisionEnter(Collision collision)
     {
+
+        //if (transform != null) audioSource.PlayOneShot(impactSound[Random.Range(0, impactSound.Length)]);
+
         if (collision.gameObject.tag == "Player" && boul == true)
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -46,9 +49,5 @@ public class SupprimerProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-            
-
-        //Destroy(gameObject);
-        //Debug.Log("Touché");
     }
 }

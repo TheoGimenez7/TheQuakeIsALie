@@ -35,9 +35,4 @@ public class ChacunSonJoueur : NetworkBehaviour {
         
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-    }
 }
