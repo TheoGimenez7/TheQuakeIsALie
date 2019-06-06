@@ -10,6 +10,8 @@ public class SupprimerProjectile : MonoBehaviour
     //private AudioClip[] impactSound;
     //private AudioSource audioSource;
 
+    private bool boul = true ;
+
     [SerializeField]
     public Player joueur;
 
@@ -22,18 +24,20 @@ public class SupprimerProjectile : MonoBehaviour
 
    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && boul == true)
         {
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
             foreach (GameObject player in players)
             {
-                Debug.Log(transform.name);
                 if (player.GetComponent<Player>().username == transform.name)
                 { 
-                    player.GetComponent<Player>().Kills += 1 -1;
-                    Debug.Log(player.GetComponent<Player>().Kills);
+                    player.GetComponent<Player>().Kills += 1;
                     Destroy(gameObject);
+                    boul = false;
+                }
+                else
+                {
+                    boul = true;
                 }
             }
             

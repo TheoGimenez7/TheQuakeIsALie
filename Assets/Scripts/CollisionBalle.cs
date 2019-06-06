@@ -19,6 +19,7 @@ public class CollisionBalle : NetworkBehaviour
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabled;
 
+    private bool boul = true ;
     public void Start()
     {
         //audioSource = GetComponent<AudioSource>();
@@ -34,7 +35,13 @@ public class CollisionBalle : NetworkBehaviour
             
             StartCoroutine(Respawn());
 
-            joueur.Deaths += 1;
+            if (boul)
+            {
+                joueur.Deaths += 1;
+                boul = false;
+            }
+            else
+                boul = true;
         }
     }
 
@@ -43,7 +50,7 @@ public class CollisionBalle : NetworkBehaviour
         
         /*GameObject[] spawnPoints1 = GameObject.FindGameObjectsWithTag("PointSpawn");
         int tirageSpawn = Random.Range(0, spawnPoints1.Length);*/
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(0.001f);
         Transform _spawnPoint = NetworkManager.singleton.GetStartPosition();
         transform.position = _spawnPoint.position;
         transform.rotation = _spawnPoint.rotation;

@@ -15,7 +15,6 @@ public class ScoreboardScript : MonoBehaviour {
     void OnEnable()
     {
         GameObject[] players =GameObject.FindGameObjectsWithTag("Player");
-        Debug.Log(players);
         foreach (GameObject player in players)
         {
             

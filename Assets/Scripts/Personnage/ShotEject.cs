@@ -52,7 +52,6 @@ public class ShotEject : NetworkBehaviour
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward*ejectSpeed;
         
         bullet.transform.name =joueur.username;
-        Debug.Log(joueur.username);
 
         NetworkServer.Spawn(bullet);
     }
