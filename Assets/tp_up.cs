@@ -2,22 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.Networking;
 
-public class trigger : MonoBehaviour
+public class tp_up : MonoBehaviour
 {
-    public GameObject text;
-    public GameObject porte;
-    [SerializeField] int vitesse;
+    [SerializeField] public GameObject text;
+    [SerializeField] public GameObject playerATP;
     // Use this for initialization
     void Start()
     {
         text.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -25,17 +19,6 @@ public class trigger : MonoBehaviour
         if (collision.gameObject.tag == "player")
         {
             text.SetActive(true);
-        }
-    }
-
-    private void OnTriggerStay(Collider collision)
-    {
-        if (collision.gameObject.tag == "player")
-        {
-            if (Input.GetButton("Interact"))
-            {
-                porte.transform.Translate(Vector3.up * Time.deltaTime * vitesse);
-            }
         }
     }
 

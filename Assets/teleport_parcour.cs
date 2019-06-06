@@ -2,22 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.Networking;
 
-public class trigger : MonoBehaviour
+public class teleport_parcour : MonoBehaviour
 {
-    public GameObject text;
-    public GameObject porte;
-    [SerializeField] int vitesse;
+    [SerializeField] public GameObject text;
+    [SerializeField] public GameObject playerATP;
+    [SerializeField] public Transform Destination;
     // Use this for initialization
     void Start()
     {
         text.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -34,7 +29,10 @@ public class trigger : MonoBehaviour
         {
             if (Input.GetButton("Interact"))
             {
-                porte.transform.Translate(Vector3.up * Time.deltaTime * vitesse);
+                playerATP.transform.position = Destination.transform.position;
+                
+                Debug.Log("PERSO  :"+playerATP.transform.position.ToString());
+                Debug.Log("BUTTON :"+transform.position.ToString());
             }
         }
     }
