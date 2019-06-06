@@ -70,7 +70,7 @@ public class minuteur : MonoBehaviour
             display_time.SetActive(false);
             display_pannel.SetActive(false);
 
-            display_time_final.GetComponent<Text>().text = sMinutes + "minutes " + sSecondes + "secondes";
+            display_time_final.GetComponent<Text>().text = sMinutes + " minutes et " + sSecondes + " secondes";
             display_text_final.SetActive(true);
             display_time_final.SetActive(true);
             display_pannel_final.SetActive(true);
