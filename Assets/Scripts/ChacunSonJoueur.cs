@@ -38,9 +38,6 @@ public class ChacunSonJoueur : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!isLocalPlayer)
-        {
-            GameObject.Find("FirstPersonCharacter/gun1.2").GetComponent<Viser>().enabled = false;
-        }
+        
     }
 }
