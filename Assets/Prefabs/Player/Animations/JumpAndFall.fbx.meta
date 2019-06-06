@@ -216,8 +216,8 @@ ModelImporter:
     - serializedVersion: 16
       name: HumanoidJumpForwardLeft
       takeName: idle_jumpFwd_idle_tk01
-      firstFrame: 350
-      lastFrame: 352
+      firstFrame: 328
+      lastFrame: 364
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
