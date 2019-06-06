@@ -78,8 +78,8 @@ public class minuteur : MonoBehaviour
             parcour_respawn.SetActive(true);
             parcour_quit.SetActive(true);
 
-            player.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
-            player.GetComponent<FirstPersonController>().m_RunSpeed = 0;
+            GameObject.FindGameObjectWithTag("player").GetComponent<FirstPersonController>().m_WalkSpeed = 0;
+            GameObject.FindGameObjectWithTag("player").GetComponent<FirstPersonController>().m_RunSpeed = 0;
         }
     }
 
@@ -93,8 +93,8 @@ public class minuteur : MonoBehaviour
             }
             else if (Input.GetButton("parcour_respawn"))
             {
-                player.GetComponent<FirstPersonController>().m_WalkSpeed = 20;
-                player.GetComponent<FirstPersonController>().m_RunSpeed = 20;
+                GameObject.FindGameObjectWithTag("player").GetComponent<FirstPersonController>().m_WalkSpeed = 20;
+                GameObject.FindGameObjectWithTag("player").GetComponent<FirstPersonController>().m_RunSpeed = 20;
 
                 display_text_final.SetActive(false);
                 display_time_final.SetActive(false);
