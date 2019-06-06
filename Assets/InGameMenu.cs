@@ -9,9 +9,12 @@ public class InGameMenu : MonoBehaviour {
     [SerializeField]
     private GameObject IngameMenu;
 
+    [SerializeField]
+    private GameObject scoreboard;
 
-	// Use this for initialization
-	private void Start () {
+
+    // Use this for initialization
+    private void Start () {
         InGameMenu.isOn = false;
 
     }
@@ -19,9 +22,20 @@ public class InGameMenu : MonoBehaviour {
 	// Update is called once per frame
 	private void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Escape))
+		if(Input.GetKeyDown(KeyCode.M))
         {
             ToggleIngameMenu();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log("3");
+            scoreboard.SetActive(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            Debug.Log("10");
+            scoreboard.SetActive(false);
         }
 
     }
