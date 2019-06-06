@@ -5,16 +5,16 @@ using UnityEngine;
 
     public class Viser : MonoBehaviour {
 
-        [SerializeField]
+       /* [SerializeField]
         private Vector3 AimPos;
         [SerializeField]
         private Vector3 NormalPos;
         [SerializeField]
-        private GameObject Weapon;
+        private GameObject Weapon;*/
 
 
         void Update () {
-            if (Input.GetButton("Fire2"))
+           /* if (Input.GetButton("Fire2"))
             {
                 transform.localPosition = AimPos;
             }
@@ -22,6 +22,6 @@ using UnityEngine;
             if (!Input.GetButton("Fire2"))
             {
                 transform.localPosition = NormalPos;
-            }
+            }*/
         }
     }
