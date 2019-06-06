@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayGame ()
     {
-        SceneManager.LoadScene("AI", LoadSceneMode.Single);
+        SceneManager.LoadScene("multi1", LoadSceneMode.Single);
     }
 
     public void ExitGame()
@@ -18,6 +18,6 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayParkour()
     {
-        SceneManager.LoadScene("Personnage", LoadSceneMode.Single);
+        SceneManager.LoadScene("MapV1", LoadSceneMode.Single);
     }
 }
