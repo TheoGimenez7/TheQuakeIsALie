@@ -14,9 +14,9 @@ public class ShotEject : NetworkBehaviour
     public float fireRate = 0.5f;
     private float nextFire = 0.5f;
     private bool fullAuto = false;
-
+    public Player joueur;
    
-    [SerializeField]
+    //[SerializeField]
     //private AudioClip[] shootSound;
     //private AudioSource audioSource;
 
@@ -50,6 +50,10 @@ public class ShotEject : NetworkBehaviour
         bulletSpawn = transform.Find("FirstPersonCharacter/gun1.2/Eject");
         GameObject bullet =(GameObject) Instantiate(bulletcasing, bulletSpawn.position, bulletSpawn.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward*ejectSpeed;
+        
+        bullet.transform.name =joueur.username;
+        Debug.Log(joueur.username);
+
         NetworkServer.Spawn(bullet);
     }
 
