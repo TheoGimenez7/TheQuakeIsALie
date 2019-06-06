@@ -10,6 +10,9 @@ public class SupprimerProjectile : MonoBehaviour
     //private AudioClip[] impactSound;
     //private AudioSource audioSource;
 
+    [SerializeField]
+    public Player joueur;
+
     public void Start()
     {
         //audioSource = GetComponent<AudioSource>();
@@ -19,8 +22,29 @@ public class SupprimerProjectile : MonoBehaviour
 
    private void OnCollisionEnter(Collision collision)
     {
-        //audioSource.PlayOneShot(impactSound[Random.Range(0, impactSound.Length)]);
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+            foreach (GameObject player in players)
+            {
+                Debug.Log(transform.name);
+                if (player.GetComponent<Player>().username == transform.name)
+                { 
+                    player.GetComponent<Player>().Kills += 1 -1;
+                    Debug.Log(player.GetComponent<Player>().Kills);
+                    Destroy(gameObject);
+                }
+            }
+            
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+            
+
+        //Destroy(gameObject);
         //Debug.Log("Touché");
     }
 }
