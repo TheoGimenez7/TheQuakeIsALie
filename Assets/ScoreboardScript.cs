@@ -14,17 +14,20 @@ public class ScoreboardScript : MonoBehaviour {
     
     void OnEnable()
     {
+        Debug.Log("4");
+        //Player[] players = GameManager.GetAllPlayers();
         GameObject[] players =GameObject.FindGameObjectsWithTag("Player");
         Debug.Log(players);
         foreach (GameObject player in players)
         {
             
-
+            Debug.Log(player.name);
             GameObject ItemPlayersScore =(GameObject) Instantiate(playerScoreboardItem, playerScoreboardList);
             JoueurScoreBoardObjetScript item = ItemPlayersScore.GetComponent <JoueurScoreBoardObjetScript>();
             if (item !=null)
             {
-                item.Setup(player.GetComponent<Player>().username, player.GetComponent<Player>().Kills , player.GetComponent<Player>().Deaths);
+                Debug.Log("6");
+                item.Setup(player.name , 6 , 9);
             }
         }
 	}

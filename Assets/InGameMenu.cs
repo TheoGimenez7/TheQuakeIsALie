@@ -29,12 +29,12 @@ public class InGameMenu : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-
+            Debug.Log("3");
             scoreboard.SetActive(true);
         }
         else if (Input.GetKeyUp(KeyCode.Tab))
         {
-            
+            Debug.Log("10");
             scoreboard.SetActive(false);
         }
 
