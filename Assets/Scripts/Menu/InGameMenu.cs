@@ -22,10 +22,10 @@ public class InGameMenu : MonoBehaviour {
 	// Update is called once per frame
 	private void Update ()
     {
-		/*if(Input.GetKeyDown(KeyCode.M))
+		if(Input.GetKeyDown(KeyCode.M))
         {
             ToggleIngameMenu();
-        }*/
+        }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -38,10 +38,10 @@ public class InGameMenu : MonoBehaviour {
             scoreboard.SetActive(false);
         }
 
-        if(Input.GetKeyDown("escape"))
+       /* if(Input.GetKeyDown("escape"))
         {
             ToggleIngameMenu();
-        }
+        }*/
 
     }
 
