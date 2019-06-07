@@ -20,4 +20,8 @@ public class MainMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("MapV1", LoadSceneMode.Single);
     }
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene("MenuV3", LoadSceneMode.Single);
+    }
 }
