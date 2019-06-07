@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class ScoreboardScript : MonoBehaviour {
+public class ScoreboardScript : NetworkBehaviour {
 
     [SerializeField]
     public GameObject playerScoreboardItem;
