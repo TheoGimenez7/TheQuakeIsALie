@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class deminuteur : MonoBehaviour {
 
@@ -10,6 +11,10 @@ public class deminuteur : MonoBehaviour {
     public float minutes;
     public float secondes;
     public int timer;
+
+    private bool decompte = true;
+
+    public GameObject[] players;
 
     // Use this for initialization
     void Start () {
@@ -28,27 +33,41 @@ public class deminuteur : MonoBehaviour {
         string sMinutes;
         string sSecondes;
 
-        time -= Time.deltaTime;
-        timer = Mathf.RoundToInt(time);
-
-        minutes = timer / 60;
-        secondes = timer % 60;
-
-        if (minutes < 10)
-            sMinutes = "0" + minutes.ToString();
-        else
-            sMinutes = minutes.ToString();
-
-        if (secondes < 10)
-            sSecondes = "0" + secondes.ToString();
-        else
-            sSecondes = secondes.ToString();
-
-        display_time.GetComponent<Text>().text = sMinutes + " : " + sSecondes;
-
-        if (timer < 0)
+        if (decompte)
         {
-            //Do something useful or Load a new game scene depending on your use-case
+
+            time -= Time.deltaTime;
+            timer = Mathf.RoundToInt(time);
+
+            minutes = timer / 60;
+            secondes = timer % 60;
+
+            if (minutes < 10)
+                sMinutes = "0" + minutes.ToString();
+            else
+                sMinutes = minutes.ToString();
+
+            if (secondes < 10)
+                sSecondes = "0" + secondes.ToString();
+            else
+                sSecondes = secondes.ToString();
+
+            display_time.GetComponent<Text>().text = sMinutes + " : " + sSecondes;
+
+        }
+
+        if (timer <= 0)
+        {
+            decompte = false;
+            display_time.GetComponent<Text>().text = "Fin de la partie";
+            players = GameObject.FindGameObjectsWithTag("Player");
+
+            foreach (GameObject player in players)
+            {
+                player.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
+                player.GetComponent<FirstPersonController>().m_RunSpeed = 0;
+                player.GetComponent<ShotEject>().enabled = false;
+            }
         }
     }
 }
