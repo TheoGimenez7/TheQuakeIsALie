@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 [RequireComponent(typeof(Player))]
-public class JoueurScoreBoardObjetScript : MonoBehaviour {
+public class JoueurScoreBoardObjetScript : NetworkBehaviour {
     [SerializeField]
     Text usernameText;
     [SerializeField]
