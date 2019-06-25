@@ -17,6 +17,6 @@ public class JoueurScoreBoardObjetScript : NetworkBehaviour {
         usernameText.text = username;
         killstext.text ="Kills : " + kills;
         deathsText.text = "Deaths : " + deaths;
-
+        Debug.Log(username);
     }
 }

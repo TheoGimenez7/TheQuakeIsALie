@@ -5,12 +5,21 @@ using UnityEngine.UI;
 
 public class username : MonoBehaviour {
 
-    public InputField name;
+    [SerializeField]
+    private GameObject IngameMenu;
+
+    public InputField prenom;
     public GameObject player;
 
     public void setget()
     {
-        player.GetComponent<Player>().username = name.text;
+        player.name = prenom.text;
+        player.GetComponent<Player>().username = prenom.text;
+        IngameMenu.SetActive(!IngameMenu.activeSelf);
+        InGameMenu.isOn = IngameMenu.activeSelf;
+
     }
+
+
 
 }

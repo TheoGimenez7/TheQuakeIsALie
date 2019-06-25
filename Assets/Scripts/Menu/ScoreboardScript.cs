@@ -14,16 +14,19 @@ public class ScoreboardScript : NetworkBehaviour {
     
     void OnEnable()
     {
+
         GameObject[] players =GameObject.FindGameObjectsWithTag("Player");
+
         foreach (GameObject player in players)
         {
-            
+
 
             GameObject ItemPlayersScore =(GameObject) Instantiate(playerScoreboardItem, playerScoreboardList);
             JoueurScoreBoardObjetScript item = ItemPlayersScore.GetComponent <JoueurScoreBoardObjetScript>();
             if (item !=null)
             {
-                item.Setup(player.GetComponent<Player>().username, player.GetComponent<Player>().Kills , player.GetComponent<Player>().Deaths);
+                Debug.Log(player.GetComponent<Player>().username);
+                item.Setup(player.name, player.GetComponent<Player>().Kills , player.GetComponent<Player>().Deaths);
             }
         }
 	}
@@ -33,6 +36,22 @@ public class ScoreboardScript : NetworkBehaviour {
         foreach(Transform child in playerScoreboardList)
         {
             Destroy(child.gameObject);
+        }
+    }
+
+    private void Reset()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+
+
+            GameObject ItemPlayersScore = (GameObject)Instantiate(playerScoreboardItem, playerScoreboardList);
+            JoueurScoreBoardObjetScript item = ItemPlayersScore.GetComponent<JoueurScoreBoardObjetScript>();
+            if (item != null)
+            {
+                item.Setup(player.GetComponent<Player>().username, player.GetComponent<Player>().Kills, player.GetComponent<Player>().Deaths);
+            }
         }
     }
 
