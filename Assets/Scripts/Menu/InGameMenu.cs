@@ -38,10 +38,10 @@ public class InGameMenu : MonoBehaviour {
             scoreboard.SetActive(false);
         }
 
-       /* if(Input.GetKeyDown("escape"))
+        if(Input.GetKeyDown("escape"))
         {
             ToggleIngameMenu();
-        }*/
+        }
 
     }
 

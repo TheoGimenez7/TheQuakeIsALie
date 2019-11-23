@@ -1,7 +1,7 @@
 Initialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvldumd.dll 26.21.14.3086]
+    Version:  Direct3D 9.0c [nvldumd.dll 26.21.14.3630]
     Renderer: NVIDIA GeForce GTX 1070
     Vendor:   NVIDIA
     VRAM:     3072 MB (via DXGI)
@@ -19,7 +19,7 @@ Platform assembly: H:\Semaine Spé\TheQuakeIsALie\Quake Is A Lie_Data\Managed\Un
 Loading H:\Semaine Spé\TheQuakeIsALie\Quake Is A Lie_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: H:\Semaine Spé\TheQuakeIsALie\Quake Is A Lie_Data\Managed\TextMeshPro-5.6-Runtime.dll (this message is harmless)
 Loading H:\Semaine Spé\TheQuakeIsALie\Quake Is A Lie_Data\Managed\TextMeshPro-5.6-Runtime.dll into Unity Child Domain
-- Completed reload, in  0.017 seconds
+- Completed reload, in  0.196 seconds
 Platform assembly: H:\Semaine Spé\TheQuakeIsALie\Quake Is A Lie_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: H:\Semaine Spé\TheQuakeIsALie\Quake Is A Lie_Data\Managed\System.dll (this message is harmless)
 WARNING: Shader Unsupported: 'Hidden/VR/BlitCopyFromTexArray' - Pass '' has no vertex shader
@@ -28,19 +28,101 @@ desktop: 1920x1080 60Hz; virtual: 3280x1080 at -1360,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.040700 ms
+UnloadTime: 0.930700 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 32b8 -> priority: 1 
-  Thread -> id: 326c -> priority: 1 
+  Thread -> id: 1284 -> priority: 1 
+  Thread -> id: 2bec -> priority: 1 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 427.748413 ms
+UnloadTime: 427.188385 ms
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 578.
-Total: 1.678800 ms (FindLiveObjects: 0.380200 ms CreateObjectMapping: 0.032800 ms MarkObjects: 0.270500 ms  DeleteObjects: 0.994500 ms)
+Total: 1.650200 ms (FindLiveObjects: 0.380300 ms CreateObjectMapping: 0.045100 ms MarkObjects: 0.226600 ms  DeleteObjects: 0.997600 ms)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+WARNING: BC6H/BC7 texture format is not supported, decompressing texture
+UnloadTime: 0.671300 ms
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 9593.
+Total: 4.755000 ms (FindLiveObjects: 0.334400 ms CreateObjectMapping: 0.145300 ms MarkObjects: 0.693500 ms  DeleteObjects: 3.581000 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at username.setget () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCall.Invoke (System.Object[] args) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEvent.Invoke () [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Button.Press () [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x00000] in <filename unknown>:0 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00000] in <filename unknown>:0 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) [0x00000] in <filename unknown>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent()
+UnityEngine.EventSystems.StandaloneInputModule:Process()
+UnityEngine.EventSystems.EventSystem:Update()
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at username.setget () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCall.Invoke (System.Object[] args) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEvent.Invoke () [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Button.Press () [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x00000] in <filename unknown>:0 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00000] in <filename unknown>:0 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) [0x00000] in <filename unknown>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent()
+UnityEngine.EventSystems.StandaloneInputModule:Process()
+UnityEngine.EventSystems.EventSystem:Update()
+ 
+(Filename:  Line: -1)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.096600 ms
+
+Unloading 1014 unused Assets to reduce memory usage. Loaded Objects now: 582.
+Total: 7.021600 ms (FindLiveObjects: 0.084900 ms CreateObjectMapping: 0.049900 ms MarkObjects: 0.266900 ms  DeleteObjects: 6.619200 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.337400 ms
+UnloadTime: 0.346200 ms
 
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3004.
-Total: 3.610800 ms (FindLiveObjects: 0.131800 ms CreateObjectMapping: 0.073000 ms MarkObjects: 0.333600 ms  DeleteObjects: 3.070900 ms)
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3006.
+Total: 3.548200 ms (FindLiveObjects: 0.176000 ms CreateObjectMapping: 0.084900 ms MarkObjects: 0.390900 ms  DeleteObjects: 2.895300 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at username.setget () [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCall.Invoke (System.Object[] args) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.InvokableCallList.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEventBase.Invoke (System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Events.UnityEvent.Invoke () [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Button.Press () [0x00000] in <filename unknown>:0 
+  at UnityEngine.UI.Button.OnPointerClick (UnityEngine.EventSystems.PointerEventData eventData) [0x00000] in <filename unknown>:0 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute (IPointerClickHandler handler, UnityEngine.EventSystems.BaseEventData eventData) [0x00000] in <filename unknown>:0 
+  at UnityEngine.EventSystems.ExecuteEvents.Execute[IPointerClickHandler] (UnityEngine.GameObject target, UnityEngine.EventSystems.BaseEventData eventData, UnityEngine.EventSystems.EventFunction`1 functor) [0x00000] in <filename unknown>:0 
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent(Int32)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent()
+UnityEngine.EventSystems.StandaloneInputModule:Process()
+UnityEngine.EventSystems.EventSystem:Update()
+ 
+(Filename:  Line: -1)
 
